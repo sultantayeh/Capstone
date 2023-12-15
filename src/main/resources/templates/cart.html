@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head>
+    <title>Title</title>
+    <script src="/js/cart.js" type="module" defer></script>
+
+    <script th:src="@{/js/header.js}" type="module" defer></script>
+    <!--       <script src="/js/header.js" type="module" defer></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header-component></header-component>
+
+<article class="menu-parent-div">
+
+<template class="card-template">
+    <div   class="card" style="width:20rem">
+        <img class="card-img-top" src="/image/burger/burger1.jpeg" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <input  class="burger-id" type="hidden" />
+
+            <h4 class="card-title "><span class="title" ></span></h4>
+
+            <h4 class="card-title">Price: $<span class="price" ></span></h4>
+            <ul class="card-text">
+                <li class="common-op">Java</li>
+                <li class="common-op">C++</li>
+                <li class="common-op">Spring boot</li>
+
+            </ul>
+            <div class="remove btn btn-secondary">Remove from Cart</div>
+        </div>
+        <!--       // </div>-->
+    </div>
+    </template>
+<h1 style="display:none" class="cart-empty">Your cart is currently empty</h1>
+</article>
+</body>
+</html>

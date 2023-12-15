@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head>
+    <title>Title</title>
+
+    <script th:src="@{/js/header.js}" type="module" defer></script>
+    <script src="/js/menu.js" type="module" defer></script>
+
+    <!--       <script src="/js/header.js" type="module" defer></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header-component></header-component>
+
+<article class="menu-parent-div">
+    <div th:each="burger : ${burgers}" class="card" style="width:20rem">
+        <img class="card-img-top" th:src="${burger.getImageUrl()}" alt="Card image" style="width:100%">
+        <div class="card-body">
+            <input  class="burger-id" type="hidden" th:value="${burger.getId()}">
+            <h4 class="card-title"><span th:text="${burger.title}"></span></h4>
+
+            <h4 class="card-title">Price: $<span th:text="${burger.price}"></span></h4>
+            <ul th:each="ingredient : ${burger.ingredients}" class="card-text">
+                <li th:text="${ingredient}">Java</li>
+
+
+            </ul>
+            <div class="button-parent">
+                <div style="display: none" class="add btn btn-primary">Add To Cart</div>
+                <div  style="display: none" class="remove btn btn-secondary">Remove From Cart</div>
+            </div>
+        </div>
+        <!--       // </div>-->
+    </div>
+</article>
+</body>
+</html>

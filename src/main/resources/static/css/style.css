@@ -1,0 +1,31 @@
+*{
+   // border: 1px solid red;
+}
+#demo{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background: black;
+}
+.burger-img{
+    width: 10rem;
+}
+.button-parent{
+    position: relative;
+
+
+}
+.add,.btn, .remove{
+    top: 0;
+    left: 0;
+
+    display: none;
+}
+.menu-parent-div{
+    padding: 1rem;
+    display: flex;
+    /*justify-content: space-around;*/
+    align-items: center;
+gap: 6rem;
+    flex-wrap: wrap;
+}
